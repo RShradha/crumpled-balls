@@ -34,7 +34,7 @@ function setup() {
 	bottomside=createSprite(750,650,200,20);
 	bottomside.shapeColor="red";
 
-	paper1=new paper(200,650,20);
+	paper1=new paper(200,500,20);
 	Engine.run(engine);
   
 }
@@ -52,5 +52,10 @@ function draw() {
  
 }
 
+function keyPressed() {
+	if (keyCode===UP_ARROW) {
+		Matter.Body.applyForce(paper1.body,paper1.body.position,{x:12,y:-12});
+	}
+}
 
 
